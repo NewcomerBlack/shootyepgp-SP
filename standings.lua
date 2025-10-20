@@ -218,7 +218,7 @@ function sepgp_standings:OnEnable()
   if not T:IsRegistered("sepgp_standings") then
     T:Register("sepgp_standings",
       "children", function()
-        T:SetTitle(L["Guild Wanted"])
+        T:SetTitle(L["Guild SP"])
         self:OnTooltipUpdate()
       end,
   		"showTitleWhenDetached", true,
