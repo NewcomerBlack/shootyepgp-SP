@@ -31,7 +31,7 @@ sepgp.VARS = {
 }
 sepgp.VARS.reservecall = string.format(L["{shootyepgp}Type \"+\" if on main, or \"+<YourMainName>\" (without quotes) if on alt within %dsec."],sepgp.VARS.timeout)
 sepgp._playerName = (UnitName("player"))
-local out = "|cff9664c8Wantedepgp:|r %s"
+local out = "|cff9664c8SPepgp:|r %s"
 local raidStatus,lastRaidStatus
 local lastUpdate = 0
 local needInit,needRefresh = true
@@ -814,7 +814,7 @@ function sepgp:AddDataToTooltip(tooltip,itemlink,itemstring,is_master)
       sepgp.extratip:SetPoint("TOPLEFT", tooltip, "BOTTOMLEFT", 0, -5)
       sepgp.extratip:SetPoint("TOPRIGHT", tooltip, "BOTTOMRIGHT", 0, -5)
     end
-    sepgp.extratip:SetText("|cff9664c8Wantedepgp|r")
+    sepgp.extratip:SetText("|cff9664c8SPepgp|r")
     sepgp.extratip:AddDoubleLine(" ",textRight)
     sepgp.extratip:AddDoubleLine(" ",textRight2)
     if (is_master) then
@@ -1050,14 +1050,14 @@ function sepgp:bidPrint(link,masterlooter,need,greed,bid)
 end
 
 function sepgp:simpleSay(msg)
-  SendChatMessage(string.format("Wantedepgp: %s",msg), sepgp_saychannel)
+  SendChatMessage(string.format("SPepgp: %s",msg), sepgp_saychannel)
 end
 
 function sepgp:adminSay(msg)
   -- API is broken on Elysium
   -- local g_listen, g_speak, officer_listen, officer_speak, g_promote, g_demote, g_invite, g_remove, set_gmotd, set_publicnote, view_officernote, edit_officernote, set_guildinfo = GuildControlGetRankFlags() 
   -- if (officer_speak) then
-  SendChatMessage(string.format("Wantedepgp: %s",msg),"OFFICER")
+  SendChatMessage(string.format("SPepgp: %s",msg),"OFFICER")
   -- end
 end
 
@@ -1602,7 +1602,7 @@ end
 -- Menu
 ---------
 sepgp.hasIcon = "Interface\\PetitionFrame\\GuildCharter-Icon"
-sepgp.title = "Wantedepgp"
+sepgp.title = "SPepgp"
 sepgp.defaultMinimapPosition = 180
 sepgp.defaultPosition = "RIGHT"
 sepgp.cannotDetachTooltip = true
@@ -2478,19 +2478,19 @@ function sepgp:suggestedAwardEP()
       end
 
       if zoneEN == "Emerald Sanctum" then
-        return 25
+        return 50
       elseif zoneEN == "Blackwing Lair" then
-        return 15
+        return 10
       elseif zoneEN == "Ahn'Qiraj" then
-        return 17
+        return 15
       elseif zoneEN == "Tower of Karazhan" then
         return 50
       elseif zoneEN == "Sapphiron's Lair" then
-        return 20
+        return 30
       elseif zoneEN == "Kel'Thuzad Chamber" then
-        return 20
+        return 30
       elseif zoneEN == "Naxxramas" then
-        return 20
+        return 30
       end
     end
   end
